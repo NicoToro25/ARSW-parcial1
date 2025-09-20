@@ -14,49 +14,6 @@
 Se mostró como implementar un controlador REST (APIController) para exponer los servicios de la aplicación.
 Además, se implementaron algunos endpoints y se hicieron pruebas.
 
-## Estructura del laboratorio
-
-```bash
-├── .idea/                          # Configuración propia de IntelliJ IDEA
-├── .mvn/                           # Configuración del wrapper de Maven
-│   └── wrapper/                    # Scripts y configuraciones del Maven Wrapper
-├── img/                            # Carpeta de imágenes para la documentación
-├── src/                            # Código fuente del proyecto
-│   ├── main/                       # Código principal
-│   │   └── java/                   
-│   │       └── edu/eci/arsw/
-│   │           ├── controllers/    # Controladores REST (exponen la API)
-│   │           ├── model/          # Clases del modelo (Blueprint, Point, etc.)
-│   │           ├── persistence/    # Interfaces de persistencia
-│   │           └── services/       # Lógica de negocio (servicios)
-│   └── test/                       # Código de pruebas
-│       └── java/
-│           └── edu/eci/arsw/blueprints/test/
-│               └── persistence/
-│                   └── impl/       # Pruebas unitarias para la capa de persistencia
-└── target/                         # Archivos generados por Maven (build)
-    ├── classes/                    # Archivos compilados del main
-    │   └── edu/eci/arsw/blueprints/
-    │       ├── controllers/        
-    │       ├── filter/impl/
-    │       ├── model/
-    │       ├── persistence/impl/
-    │       └── services/
-    ├── generated-sources/          # Fuentes generadas automáticamente
-    │   └── annotations/
-    ├── generated-test-sources/     # Fuentes de pruebas generadas
-    │   └── test-annotations/
-    ├── maven-archiver/             # Metadatos del build Maven
-    ├── maven-status/               # Estado del compilador de Maven
-    │   └── maven-compiler-plugin/
-    │       ├── compile/default-compile/
-    │       └── testCompile/default-testCompile/
-    ├── surefire-reports/           # Reportes de ejecución de pruebas
-    └── test-classes/               # Archivos compilados de test
-        └── edu/eci/arsw/blueprints/test/
-            └── persistence/impl/
-
-```
 ---
 
 ### Ejecutar el Proyecto
@@ -104,4 +61,33 @@ mvn exec:java@
 
 Si se tiene algún inconveniente con la ejecución, asegúrarse de que las variables de entorno de Java y Maven estén correctamente configuradas y de estar ubicado en la carpeta correspondiente antes de ejecutar los comandos.
 
+---
 
+En este repositorio se busca crear una aplicación que, con ayuda de API keys, se vincule a una plataforma externa que 
+nos brinde información sobre el mercado de valores de las acciones negociadas en bolsa.
+
+Para ver más información.
+
+## Creación del proyecto
+
+Para la creación del proyecto se implementó Springboot con Maven y se vinculó al repositorio.
+
+# Lógica del negocio
+
+## Implementación de Service
+
+Se agregaron los paquetes de Service, donde se movía como tal la lógica del negocia donde se implementó principalmente getters y setters.
+
+## Implementación de Model
+
+Se agregaron las clases necesarias para el paso de información, dentro de esto se encuentra una clase valores donde 
+se almacena la inforación.
+
+## Implementación de persistencia
+
+Se agregó una interfaz de persistencia que contiene persistencia local, donde se implementó el uso de clientes concurrentes.
+Además, se usó inyección de dependencias para cumplir con los requisitos de escalabilidad.
+
+## Implementación de Controller
+
+Se agregaron los controladores, que permite vincular el software a la API key dada.

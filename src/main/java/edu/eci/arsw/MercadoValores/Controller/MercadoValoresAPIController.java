@@ -1,8 +1,8 @@
 package edu.eci.arsw.MercadoValores.Controller;
 
-
-
-
-@RestController
-public class MercadoValoresAPIController {
+public interface MercadoValoresAPIController {
+    StockData getIntraday(String symbol);
+    StockData getDaily(String symbol);
+    StockData getWeekly(String symbol);
+    StockData getMonthly(String symbol);
 }
