@@ -74,6 +74,8 @@ Para la creación del proyecto se implementó Springboot con Maven y se vinculó
 
 # Lógica del negocio
 
+![img](/img/estructura.png)
+
 ## Implementación de Service
 
 Se agregaron los paquetes de Service, donde se movía como tal la lógica del negocia donde se implementó principalmente getters y setters.
